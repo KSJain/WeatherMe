@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CurrentTempratureVC.swift
 //  WeatherMe
 //
 //  Created by Kartikeya Saxena Jain on 4/30/20.
@@ -8,13 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class CurrentTempratureVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemBlue
     }
-
-
 }
-
