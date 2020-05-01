@@ -13,7 +13,9 @@ class CurrentTempratureVC: UIViewController {
     
     private var locationManager: LocationManager!
     private var currentLocation: CLLocationCoordinate2D? = nil {
-        didSet { getCurrentWeatherForLocation() }
+        didSet {
+            getCurrentWeatherFor(location: currentLocation!)
+        }
     }
         
     override func viewDidLoad() {
@@ -24,11 +26,23 @@ class CurrentTempratureVC: UIViewController {
         getCurrentUserLocation()
     }
     
-    private func getCurrentWeatherForLocation() {
-        guard let location = currentLocation else { return }
+    private func getCurrentWeatherFor(location: CLLocationCoordinate2D) {
         
-        print("location.longitude   \(location.longitude)")
-        print("location.latitude    \(location.latitude)")
+        NetworkManager.shared.getCurrentWeatherForUsersLocation(coordinates: location) { result in
+            switch result {
+            case.failure(let error):
+                print("Error: \(error.rawValue)")
+            case .success(let data):
+                let kelvinTemp = data.current.temp
+                let ferenhightTemp = (kelvinTemp - 273.15) * 9/5 + 32
+                let tempString = String(format: "%.1f", ferenhightTemp)
+                
+                let timeZone = data.timezone.split(separator: "/")
+                if timeZone.count == 2 {
+                    print("Current \(timeZone[1]) Weather: \(tempString) degree F")
+                }
+            }
+        }
     }
 }
 

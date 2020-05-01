@@ -13,6 +13,11 @@
 		F6F64A2E245B633100B954C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6F64A2C245B633100B954C0 /* LaunchScreen.storyboard */; };
 		F6F64A38245B645D00B954C0 /* CurrentTempratureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F64A37245B645D00B954C0 /* CurrentTempratureVC.swift */; };
 		F6F64A3B245B6A3200B954C0 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F64A3A245B6A3200B954C0 /* LocationManager.swift */; };
+		F6F64A4A245CD08900B954C0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F64A49245CD08900B954C0 /* Constants.swift */; };
+		F6F64A4C245CD0BE00B954C0 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F64A4B245CD0BE00B954C0 /* Errors.swift */; };
+		F6F64A4F245CD14700B954C0 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F64A4E245CD14700B954C0 /* CurrentWeather.swift */; };
+		F6F64A52245CD22700B954C0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F64A51245CD22700B954C0 /* NetworkManager.swift */; };
+		F6F64A54245CDA4100B954C0 /* ForecastWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F64A53245CDA4100B954C0 /* ForecastWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		F6F64A2F245B633100B954C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6F64A37245B645D00B954C0 /* CurrentTempratureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTempratureVC.swift; sourceTree = "<group>"; };
 		F6F64A3A245B6A3200B954C0 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		F6F64A49245CD08900B954C0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F6F64A4B245CD0BE00B954C0 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		F6F64A4E245CD14700B954C0 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		F6F64A51245CD22700B954C0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F6F64A53245CDA4100B954C0 /* ForecastWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,8 @@
 		F6F64A20245B632D00B954C0 /* WeatherMe */ = {
 			isa = PBXGroup;
 			children = (
+				F6F64A4D245CD13000B954C0 /* Model */,
+				F6F64A48245CD07700B954C0 /* Utilities */,
 				F6F64A39245B6A1F00B954C0 /* Managers */,
 				F6F64A36245B643E00B954C0 /* Screens */,
 				F6F64A35245B643500B954C0 /* Support */,
@@ -87,8 +99,27 @@
 			isa = PBXGroup;
 			children = (
 				F6F64A3A245B6A3200B954C0 /* LocationManager.swift */,
+				F6F64A51245CD22700B954C0 /* NetworkManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		F6F64A48245CD07700B954C0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F6F64A49245CD08900B954C0 /* Constants.swift */,
+				F6F64A4B245CD0BE00B954C0 /* Errors.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F6F64A4D245CD13000B954C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F6F64A4E245CD14700B954C0 /* CurrentWeather.swift */,
+				F6F64A53245CDA4100B954C0 /* ForecastWeather.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,9 +192,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6F64A54245CDA4100B954C0 /* ForecastWeather.swift in Sources */,
+				F6F64A4A245CD08900B954C0 /* Constants.swift in Sources */,
 				F6F64A3B245B6A3200B954C0 /* LocationManager.swift in Sources */,
 				F6F64A38245B645D00B954C0 /* CurrentTempratureVC.swift in Sources */,
+				F6F64A4F245CD14700B954C0 /* CurrentWeather.swift in Sources */,
+				F6F64A52245CD22700B954C0 /* NetworkManager.swift in Sources */,
 				F6F64A22245B632D00B954C0 /* AppDelegate.swift in Sources */,
+				F6F64A4C245CD0BE00B954C0 /* Errors.swift in Sources */,
 				F6F64A24245B632D00B954C0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
