@@ -12,6 +12,7 @@
 		F6F64A2B245B633100B954C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6F64A2A245B633100B954C0 /* Assets.xcassets */; };
 		F6F64A2E245B633100B954C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6F64A2C245B633100B954C0 /* LaunchScreen.storyboard */; };
 		F6F64A38245B645D00B954C0 /* CurrentTempratureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F64A37245B645D00B954C0 /* CurrentTempratureVC.swift */; };
+		F6F64A3B245B6A3200B954C0 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F64A3A245B6A3200B954C0 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		F6F64A2D245B633100B954C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6F64A2F245B633100B954C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6F64A37245B645D00B954C0 /* CurrentTempratureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTempratureVC.swift; sourceTree = "<group>"; };
+		F6F64A3A245B6A3200B954C0 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		F6F64A20245B632D00B954C0 /* WeatherMe */ = {
 			isa = PBXGroup;
 			children = (
+				F6F64A39245B6A1F00B954C0 /* Managers */,
 				F6F64A36245B643E00B954C0 /* Screens */,
 				F6F64A35245B643500B954C0 /* Support */,
 				F6F64A2A245B633100B954C0 /* Assets.xcassets */,
@@ -78,6 +81,14 @@
 				F6F64A37245B645D00B954C0 /* CurrentTempratureVC.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		F6F64A39245B6A1F00B954C0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F6F64A3A245B6A3200B954C0 /* LocationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6F64A3B245B6A3200B954C0 /* LocationManager.swift in Sources */,
 				F6F64A38245B645D00B954C0 /* CurrentTempratureVC.swift in Sources */,
 				F6F64A22245B632D00B954C0 /* AppDelegate.swift in Sources */,
 				F6F64A24245B632D00B954C0 /* SceneDelegate.swift in Sources */,
