@@ -1,20 +1,20 @@
 //
-//  CurrentTempratureVC.swift
+//  ForecastWeatherVC.swift
 //  WeatherMe
 //
-//  Created by Kartikeya Saxena Jain on 4/30/20.
+//  Created by Kartikeya Saxena Jain on 5/2/20.
 //  Copyright © 2020 com.devKrey. All rights reserved.
 //
 
 import UIKit
 import CoreLocation
 
-class CurrentTempratureVC: UIViewController {
+class ForecastWeatherVC: UIViewController  {
     
     private var locationManager: LocationManager!
     private var currentLocation: CLLocationCoordinate2D?
-    private var viewModel: CurrentWeatherViewModel!
-        
+    private var viewModel: ForecastWeatherViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,31 +27,21 @@ class CurrentTempratureVC: UIViewController {
     }
     
     private func configureVC() {
+        view.backgroundColor = .systemRed
         navigationController?.navigationBar.prefersLargeTitles = true
-        setGradient()
+
     }
     
-    private func setGradient() {
-        let layer                       = CAGradientLayer()
-        layer.frame                     = view.bounds
-        layer.startPoint                = CGPoint(x: 0,y: 0)
-        layer.endPoint                  = CGPoint(x: 1,y: 1)
-        layer.colors                    = [UIColor.systemGray6.cgColor,
-                                           UIColor.systemGray5.cgColor,
-                                           UIColor.systemGray2.cgColor,
-                                           UIColor.systemGray.cgColor]
-        view.layer.addSublayer(layer)
-    }
-    
-    private func updateUI(with viewModel: CurrentWeatherViewModel)  {
+    private func updateUI(with viewModel: ForecastWeatherViewModel)  {
         print(viewModel)
         DispatchQueue.main.async {
-            self.title = viewModel.timeZone
+            self.title = "5 Days in \(viewModel.city)"
         }
     }
 }
 
-extension CurrentTempratureVC: UserLocationDelegate {
+
+extension ForecastWeatherVC: UserLocationDelegate {
     
     private func configureLocationManager() {
         locationManager                 = LocationManager(set: self)
@@ -68,17 +58,18 @@ extension CurrentTempratureVC: UserLocationDelegate {
     
 }
 
-extension CurrentTempratureVC {
+
+extension ForecastWeatherVC {
     
     private func getCurrentWeatherFor(location: CLLocationCoordinate2D) {
         
-        NetworkManager.shared.getCurrentWeatherForUsersLocation(coordinates: location) { [weak self] result in
+        NetworkManager.shared.getForecastWeatherForUsersLocation(coordinates: location) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case.failure(let error):
                 print("Error: \(error.rawValue)")
             case .success(let data):
-                self.viewModel          = CurrentWeatherViewModel(currentWeather: data)
+                self.viewModel = ForecastWeatherViewModel(with: data)
                 self.updateUI(with: self.viewModel)
             }
         }

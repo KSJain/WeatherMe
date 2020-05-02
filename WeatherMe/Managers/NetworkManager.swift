@@ -42,7 +42,6 @@ class NetworkManager {
             }
             
             let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
             
             do {
                 let weatherData = try decoder.decode(CurrentWeather.self, from: jsonData)
@@ -84,7 +83,6 @@ class NetworkManager {
             }
             
             let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
             
             do {
                 let weatherData = try decoder.decode(ForecastWeather.self, from: jsonData)
