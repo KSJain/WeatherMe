@@ -75,10 +75,10 @@ The app was developed using a simulation of multi iteration *Agile development*,
 <img src="WeatherMe/GitHub%20Demo%20Images/Forecast-PermissionDenied.PNG" width="400">
 
 ### Screen H - Location Permission Request
-<img src="WeatherMe/GitHub%20Demo%20Images/LocationPermission.PNG" width="500">
+<img src="WeatherMe/GitHub%20Demo%20Images/LocationPermission.PNG" width="400">
 
 ### Screen I - Current Page Mock
-<img src="WeatherMe/GitHub%20Demo%20Images/CurrentPageMock.jpg" width="500">
+<img src="WeatherMe/GitHub%20Demo%20Images/CurrentPageMock.jpg" width="600">
 
 ### Screen J - Forecast Page Mock
-<img src="WeatherMe/GitHub%20Demo%20Images/ForecastPageMock.jpg" width="500">
+<img src="WeatherMe/GitHub%20Demo%20Images/ForecastPageMock.jpg" width="600">
