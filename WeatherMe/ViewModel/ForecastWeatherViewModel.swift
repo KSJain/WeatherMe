@@ -8,14 +8,30 @@
 
 import Foundation
 
-struct Forecast{
+struct Forecast: Hashable {
     var date: String?
     var time: String?
     var icon: String
     var temprature: String
+    
+    init(date: String?, time: String?, icon: String, temprature: String) {
+        self.date       = date
+        self.time       = time
+        self.icon       = icon
+        self.temprature = temprature
+    }
+    
+    init() {
+        self.date       = "Fri May 01"
+        self.time       = "12 AM"
+        self.icon       =  "01d"
+        self.temprature = "70F"
+    }
 }
 
 struct ForecastWeatherViewModel {
+    
+//    let uuid = UUID()
     var forecasts = [Forecast]()
     let city: String
     
@@ -42,4 +58,17 @@ struct ForecastWeatherViewModel {
             self.forecasts.append(forecast)
         }
     }
+    
+    init() {
+        self.forecasts          = [Forecast(), Forecast(), Forecast(), Forecast()]
+        self.city               = "Cupertino"
+    }
+    
+//    func hash(into hasher: inout Hasher) {
+//        hasher.combine(uuid)
+//    }
+//
+//    static func == (lhs: ForecastWeatherViewModel, rhs: ForecastWeatherViewModel) -> Bool {
+//        lhs.uuid == rhs.uuid
+//    }
 }

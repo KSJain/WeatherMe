@@ -16,11 +16,11 @@ class CurrentTempratureVC: UIViewController {
     private var viewModel: CurrentWeatherViewModel!
     
     private var currentDateLabel: WMTitleLabel!
-    private var cityNameLabel: WMTitleLabel!
+    private var cityNameLabel: WMSecondaryTitleLabel!
     private var currentWeatherContainerView: WMWeatherContainerView!
     private var weatherDetailsLabel: WMTitleLabel!
-    private var sunriseLabelView: WMTitleLabel!
-    private var sunsetLabelView: WMTitleLabel!
+    private var sunriseLabelView: WMSecondaryTitleLabel!
+    private var sunsetLabelView: WMSecondaryTitleLabel!
     private var forecastButton: WMButton!
 
         
@@ -66,8 +66,8 @@ extension CurrentTempratureVC {
     
     private func sunUpDodnLabelsConfig() {
         let fontSize: CGFloat               = 25
-        sunriseLabelView                    = WMTitleLabel(textAlignment: .center, fontSize: fontSize)
-        sunsetLabelView                     = WMTitleLabel(textAlignment: .center, fontSize: fontSize)
+        sunriseLabelView                    = WMSecondaryTitleLabel(textAlignment: .center, fontSize: fontSize)
+        sunsetLabelView                     = WMSecondaryTitleLabel(textAlignment: .center, fontSize: fontSize)
 
         view.addSubview(sunriseLabelView)
         view.addSubview(sunsetLabelView)
@@ -120,7 +120,7 @@ extension CurrentTempratureVC {
     
     private func configureCityLabel() {
         let fontSize: CGFloat           = 20
-        cityNameLabel                   = WMTitleLabel(textAlignment: .left, fontSize: fontSize)
+        cityNameLabel                   = WMSecondaryTitleLabel(textAlignment: .left, fontSize: fontSize)
         cityNameLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(cityNameLabel)
         
@@ -153,7 +153,7 @@ extension CurrentTempratureVC {
     }
     
     private func configureButton() {
-        forecastButton = WMButton(backgroundColor: .systemGray6, title: "5 Day Forecast")
+        forecastButton = WMButton(backgroundColor: .label, title: "5 Day Forecast")
         forecastButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(forecastButton)
         

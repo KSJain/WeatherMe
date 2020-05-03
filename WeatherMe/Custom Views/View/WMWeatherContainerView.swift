@@ -12,7 +12,7 @@ class WMWeatherContainerView: UIView {
     
     private var radious: CGFloat    = 0
     private var tempLabel           = WMTitleLabel()
-    private var feelsLikeLabel      = WMTitleLabel()
+    private var feelsLikeLabel      = WMSecondaryTitleLabel()
     private var iconImageView       = WMIconImageView()
     
     override init(frame: CGRect) {
@@ -42,7 +42,7 @@ class WMWeatherContainerView: UIView {
         
         layer.cornerRadius          = radious
         layer.borderWidth           = 3
-        layer.borderColor           = UIColor.white.cgColor
+        layer.borderColor           = UIColor.label.cgColor
         backgroundColor             = UIColor(white: 0.3, alpha: 0.5)
         
         // Curr Temp
@@ -53,8 +53,7 @@ class WMWeatherContainerView: UIView {
         
         // Feels
         let feelsFontSize: CGFloat   = radious *  0.2
-        feelsLikeLabel               = WMTitleLabel(textAlignment: .center, fontSize: feelsFontSize)
-        feelsLikeLabel.textColor     = .label
+        feelsLikeLabel               = WMSecondaryTitleLabel(textAlignment: .center, fontSize: feelsFontSize)
         addSubview(feelsLikeLabel)
         
         // Icon

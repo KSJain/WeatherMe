@@ -25,6 +25,7 @@
 		F655A123245E440500D7230F /* WMWeatherContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655A122245E440500D7230F /* WMWeatherContainerView.swift */; };
 		F655A125245E466500D7230F /* UIIMageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655A124245E466500D7230F /* UIIMageView + Extension.swift */; };
 		F655A128245E680800D7230F /* WMIconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655A127245E680800D7230F /* WMIconImageView.swift */; };
+		F655A12A245E709600D7230F /* WMSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655A129245E709600D7230F /* WMSecondaryTitleLabel.swift */; };
 		F6F64A22245B632D00B954C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F64A21245B632D00B954C0 /* AppDelegate.swift */; };
 		F6F64A24245B632D00B954C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F64A23245B632D00B954C0 /* SceneDelegate.swift */; };
 		F6F64A2B245B633100B954C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6F64A2A245B633100B954C0 /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		F655A122245E440500D7230F /* WMWeatherContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMWeatherContainerView.swift; sourceTree = "<group>"; };
 		F655A124245E466500D7230F /* UIIMageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIIMageView + Extension.swift"; sourceTree = "<group>"; };
 		F655A127245E680800D7230F /* WMIconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMIconImageView.swift; sourceTree = "<group>"; };
+		F655A129245E709600D7230F /* WMSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMSecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		F6F64A1E245B632D00B954C0 /* WeatherMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F64A21245B632D00B954C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6F64A23245B632D00B954C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			children = (
 				F655A11C245E303D00D7230F /* WMTitleLabel.swift */,
 				F655A11E245E310C00D7230F /* WMBodyLabel.swift */,
+				F655A129245E709600D7230F /* WMSecondaryTitleLabel.swift */,
 			);
 			path = Label;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				F6F64A64245DC5A000B954C0 /* Double + Extension.swift in Sources */,
 				F655A114245E2E1800D7230F /* WMAlertVC.swift in Sources */,
 				F655A11D245E303D00D7230F /* WMTitleLabel.swift in Sources */,
+				F655A12A245E709600D7230F /* WMSecondaryTitleLabel.swift in Sources */,
 				F6F64A4C245CD0BE00B954C0 /* Errors.swift in Sources */,
 				F655A125245E466500D7230F /* UIIMageView + Extension.swift in Sources */,
 				F6F64A56245DB5D500B954C0 /* ForecastWeatherVC.swift in Sources */,
