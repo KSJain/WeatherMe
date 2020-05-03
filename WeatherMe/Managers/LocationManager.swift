@@ -11,6 +11,7 @@ import Foundation
 
 protocol UserLocationDelegate {
     func didGetUsersCurrntLocastion(_ location: CLLocationCoordinate2D)
+    func locationManagerDoesNotHavePermissions()
 }
 
 class LocationManager: NSObject {
@@ -30,7 +31,7 @@ class LocationManager: NSObject {
 
         locationManager                     = CLLocationManager()
         locationManager.delegate            = self
-        locationManager.desiredAccuracy     = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy     = kCLLocationAccuracyHundredMeters
         locationManager.requestAlwaysAuthorization()
         
     }
@@ -53,6 +54,6 @@ extension LocationManager: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Error \(error)")
+        delegate.locationManagerDoesNotHavePermissions()
     }
 }

@@ -52,10 +52,7 @@ extension ForecastWeatherVC {
         DispatchQueue.main.async {
             self.title = "5 Days in \(viewModel.city)"
             
-            if viewModel.forecasts.isEmpty {
-                // Empty State
-                print("NO FORECAST - EMPTY STATE VIEW")
-            } else {
+            if !viewModel.forecasts.isEmpty {
                 let forecasts           = viewModel.forecasts
                 self.createSnapshot(for: forecasts)
                 self.view.bringSubviewToFront(self.tableView)
@@ -86,12 +83,12 @@ extension ForecastWeatherVC {
         })
     }
     
-        private func createSnapshot(for forecasts: [Forecast] ) {
-            var snapshot                    = ForecastSnapshot()
-            snapshot.appendSections([.main])
-            snapshot.appendItems(forecasts)
-            diffableDataSource.apply(snapshot, animatingDifferences: true)
-        }
+    private func createSnapshot(for forecasts: [Forecast] ) {
+        var snapshot                    = ForecastSnapshot()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(forecasts)
+        diffableDataSource.apply(snapshot, animatingDifferences: true)
+    }
 }
 
 extension ForecastWeatherVC: UserLocationDelegate {
@@ -109,23 +106,37 @@ extension ForecastWeatherVC: UserLocationDelegate {
         getCurrentWeatherFor(location: location)
     }
     
+    func locationManagerDoesNotHavePermissions() {
+        tableView.removeFromSuperview()
+        self.showEmptyStateView(with: WMConstants.forecastScreenNoLocationPermission.rawValue)
+    }
+    
 }
 
 
 extension ForecastWeatherVC {
     
     private func getCurrentWeatherFor(location: CLLocationCoordinate2D) {
-        
+        showLoadingView()
         NetworkManager.shared.getForecastWeatherForUsersLocation(coordinates: location) { [weak self] result in
             guard let self = self else { return }
+            
+            self.dismissLoadingView()
+            
             switch result {
             case.failure(let error):
+                DispatchQueue.main.async {
+                    self.showEmptyStateView(with: WMConstants.noForecastData.rawValue)
+                }
+                
                 self.presentGFAlertOnMainThread(title: "OOPS  🚧",
                                                 message: "\(error.rawValue)",
                     buttonTitle: "OK")
-                let placeholder         = ForecastWeatherViewModel()
-                self.updateUI(with: placeholder)
+                
             case .success(let data):
+                DispatchQueue.main.async {
+                    self.hideEmptyStateView()
+                }
                 self.viewModel = ForecastWeatherViewModel(with: data)
                 self.updateUI(with: self.viewModel)
             }

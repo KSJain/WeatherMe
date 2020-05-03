@@ -153,7 +153,7 @@ extension CurrentTempratureVC {
     }
     
     private func configureButton() {
-        forecastButton = WMButton(backgroundColor: .label, title: "5 Day Forecast")
+        forecastButton = WMButton(backgroundColor: .label, title: "Weather Forecast")
         forecastButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(forecastButton)
         
@@ -188,7 +188,13 @@ extension CurrentTempratureVC {
 
 extension CurrentTempratureVC: UserLocationDelegate {
     
-    // LOCATION MGR FAILED PERMISSION
+    func locationManagerDoesNotHavePermissions() {
+        if currentWeatherContainerView != nil {
+            currentWeatherContainerView.removeFromSuperview()
+        }
+        
+        self.showEmptyStateView(with: WMConstants.forecastScreenNoLocationPermission.rawValue)
+    }
     
     private func configureLocationManager() {
         locationManager                 = LocationManager(set: self)
@@ -202,7 +208,6 @@ extension CurrentTempratureVC: UserLocationDelegate {
         currentLocation                 = location
         getCurrentWeatherFor(location: location)
     }
-    
 }
 
 extension CurrentTempratureVC {

@@ -47,7 +47,7 @@ class WMWeatherContainerView: UIView {
         
         // Curr Temp
         let tempFontSize: CGFloat   = radious *  0.6
-        tempLabel                   = WMTitleLabel(textAlignment: .center, fontSize: tempFontSize)
+        tempLabel                   = WMTitleLabel(textAlignment: .natural, fontSize: tempFontSize)
         tempLabel.textColor         = .label
         addSubview(tempLabel)
         
@@ -57,18 +57,23 @@ class WMWeatherContainerView: UIView {
         addSubview(feelsLikeLabel)
         
         // Icon
+        iconImageView.sizeToFit()
         addSubview(iconImageView)
         
         NSLayoutConstraint.activate([
             iconImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            iconImageView.heightAnchor.constraint(equalToConstant: radious * 0.9),
+            iconImageView.heightAnchor.constraint(equalToConstant: radious * 0.85),
             iconImageView.widthAnchor.constraint(equalTo: iconImageView.heightAnchor),
-            iconImageView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            iconImageView.topAnchor.constraint(equalTo: topAnchor, constant: radious * 0.005),
             
             tempLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            tempLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -radious * 0.2),
+            tempLabel.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: -radious * 0.4),
             tempLabel.widthAnchor.constraint(equalToConstant: tempFontSize * 2.5),
-            tempLabel.heightAnchor.constraint(equalToConstant: tempFontSize * 1.3),
+            tempLabel.heightAnchor.constraint(equalToConstant: tempFontSize * 1.5),
+            
+            
+//            tempLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+//            tempLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -radious * 0.08),
             
             feelsLikeLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             feelsLikeLabel.topAnchor.constraint(equalTo: tempLabel.bottomAnchor),

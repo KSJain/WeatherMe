@@ -18,7 +18,7 @@ class NetworkManager {
     
     func getCurrentWeatherForUsersLocation(coordinates location: CLLocationCoordinate2D, completion: @escaping (Result<CurrentWeather, WMNetworkError>) -> Void) {
         
-        let endpoint = baseURL + "/onecall?lat=\(location.latitude)&lon=\(location.longitude)&appid=\(WNConstants.weatherMapAPIKey.rawValue)"
+        let endpoint = baseURL + "/onecall?lat=\(location.latitude)&lon=\(location.longitude)&appid=\(WMConstants.weatherMapAPIKey.rawValue)"
 
         guard let url = URL(string: endpoint) else {
             completion(.failure(.badURL))
@@ -58,8 +58,9 @@ class NetworkManager {
     
     func getForecastWeatherForUsersLocation(coordinates location: CLLocationCoordinate2D, completion: @escaping (Result<ForecastWeather, WMNetworkError>) -> Void) {
         
-        let endpoint = baseURL + "/forecast?lat=\(location.latitude)&lon=\(location.longitude)&appid=\(WNConstants.weatherMapAPIKey.rawValue)"
-        //https://api.openweathermap.org/data/2.5/forecast?lat=42.23880060139691&lon=-83.2362027770297&appid=8a1989ec10b68a04dc898bd1ab284f96
+//        let endpoint = baseURL + "/forecast?lat=\(location.latitude)&lon=\(location.longitude)&appid=\(WMConstants.weatherMapAPIKey.rawValue)"
+        let endpoint = baseURL + "/forecast?lat=\(location.latitude)&lon=\(location.longitude)&dd=\(WMConstants.weatherMapAPIKey.rawValue)"
+
         
         guard let url = URL(string: endpoint) else {
             completion(.failure(.badURL))

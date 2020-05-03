@@ -18,14 +18,14 @@ struct Forecast: Hashable {
         self.date       = date
         self.time       = time
         self.icon       = icon
-        self.temprature = temprature
+        self.temprature = temprature + "°F"
     }
     
     init() {
         self.date       = "Fri May 01"
         self.time       = "12 AM"
         self.icon       =  "01d"
-        self.temprature = "70F"
+        self.temprature = "70°F"
     }
 }
 

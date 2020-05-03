@@ -21,9 +21,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Weather Me will like to know your location to provide you with local Weather?</string>
+	<string>App needs to know your location to tell you the weather. Please Enable it. We wont hassel you. Prommise</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Weather Me will like to know your location to provide you with local Weather?</string>
+	<string>App needs to know your location to tell you the weather. Please Enable it. We wont hassel you. Prommise</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

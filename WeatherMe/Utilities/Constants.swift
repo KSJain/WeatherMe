@@ -9,14 +9,18 @@
 import UIKit
 
 // MARK: - API Key
-public enum WNConstants: String {
+public enum WMConstants: String {
     case weatherMapAPIKey                       = "8a1989ec10b68a04dc898bd1ab284f96"
+    case forecastScreenNoLocationPermission     = "Location Permissions are 🚫 Disabled 😭. Please enable them in your device settings ⚙️."
+    case noForecastData                         = "App does not have any  ⛅️ forecasts to show at this momoent. Please check back later ⏳."
 }
 
 // MARK: - Image Name
 
 
 enum WMImages: String {
+    static let emptyStateLogo                   =  UIImage(named: "emptyStateLogo")
+    
     case img01d                                 = "01d"
     case img01n                                 = "01n"
     static let clearSkyDayIcon                  = UIImage(named: "01d")
@@ -61,4 +65,31 @@ enum WMImages: String {
     case img50n                                 = "50n"
     static let mistDayIcon                      = UIImage(named: "50d")
     static let mistNightIcon                    = UIImage(named: "50n")
+}
+
+// MARK:- Scree Sixe Constanyts
+enum ScreenSize {
+    static let width                            = UIScreen.main.bounds.size.width
+    static let height                           = UIScreen.main.bounds.size.height
+    static let maxLength                        = max(ScreenSize.width, ScreenSize.height)
+    static let minLength                        = min(ScreenSize.width, ScreenSize.height)
+}
+
+enum DeviceTypes {
+    static let idiom                            = UIDevice.current.userInterfaceIdiom
+    static let nativeScale                      = UIScreen.main.nativeScale
+    static let scale                            = UIScreen.main.scale
+
+    static let isiPhoneSE                       = idiom == .phone && ScreenSize.maxLength == 568.0
+    static let isiPhone8Standard                = idiom == .phone && ScreenSize.maxLength == 667.0 && nativeScale == scale
+    static let isiPhone8Zoomed                  = idiom == .phone && ScreenSize.maxLength == 667.0 && nativeScale > scale
+    static let isiPhone8PlusStandard            = idiom == .phone && ScreenSize.maxLength == 736.0
+    static let isiPhone8PlusZoomed              = idiom == .phone && ScreenSize.maxLength == 736.0 && nativeScale < scale
+    static let isiPhoneX                        = idiom == .phone && ScreenSize.maxLength == 812.0
+    static let isiPhoneXsMaxAndXr               = idiom == .phone && ScreenSize.maxLength == 896.0
+    static let isiPad                           = idiom == .pad && ScreenSize.maxLength >= 1024.0
+
+    static func isiPhoneXAspectRatio() -> Bool {
+        return isiPhoneX || isiPhoneXsMaxAndXr
+    }
 }

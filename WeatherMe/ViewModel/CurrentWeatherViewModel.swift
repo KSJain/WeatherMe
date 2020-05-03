@@ -44,8 +44,8 @@ struct CurrentWeatherViewModel {
             
             
         // Temprature
-        self.temperature                = currentWeather.current.temp.convertKelvinToFahrenheit()
-        let feelsLikeText               = "Feels \(currentWeather.current.feelsLike.convertKelvinToFahrenheit())"
+        self.temperature                = currentWeather.current.temp.convertKelvinToFahrenheit() + "°F"
+        let feelsLikeText               = "Feels \(currentWeather.current.feelsLike.convertKelvinToFahrenheit())" + "°F"
         self.feelsLike                  = feelsLikeText
         self.humidity                   = "\(currentWeather.current.humidity) %"
         
@@ -62,11 +62,11 @@ struct CurrentWeatherViewModel {
         self.sunrise                    = "Sunrise   --:--"
         self.date                       = "Fri May 02"
         
-        self.temperature                = "58F"
-        self.feelsLike                  = "Feels 59F"
+        self.temperature                = "58°F"
+        self.feelsLike                  = "Feels 58°F"
         self.humidity                   = "25%"
         
-        self.weatherIconName            = "02d"
+        self.weatherIconName            = WMImages.img11d.rawValue
         self.currentWeatherDiscription  = "Scattered Clouds"
     }
 }

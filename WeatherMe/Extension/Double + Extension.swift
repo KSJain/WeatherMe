@@ -12,7 +12,7 @@ extension Double {
     func convertKelvinToFahrenheit() -> String {
         let kTemp               = self
         let fTemp               = (kTemp - 273.15) * 9/5 + 32
-        let tempStr             = String(format: "%.1f", fTemp) + "°F"
+        let tempStr             = String(format: "%.1f", fTemp)
         return tempStr
     }
     
