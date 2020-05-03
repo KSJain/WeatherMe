@@ -65,7 +65,8 @@ extension CurrentTempratureVC {
     }
     
     private func sunUpDodnLabelsConfig() {
-        let fontSize: CGFloat               = 25
+        let fontSize: CGFloat   = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 15 : 25
+
         sunriseLabelView                    = WMSecondaryTitleLabel(textAlignment: .center, fontSize: fontSize)
         sunsetLabelView                     = WMSecondaryTitleLabel(textAlignment: .center, fontSize: fontSize)
 
@@ -88,11 +89,12 @@ extension CurrentTempratureVC {
     }
     
     private func configureCurrentWeatherDiscriptor() {
-        let fontSize: CGFloat               = 18
+        let fontSize: CGFloat   = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 9 : 18
+
         weatherDetailsLabel                 = WMTitleLabel(textAlignment: .center, fontSize: fontSize)
         view.addSubview(weatherDetailsLabel)
         
-        let padding: CGFloat                = 45
+        let padding: CGFloat                = fontSize * 2.5
         
         NSLayoutConstraint.activate([
             weatherDetailsLabel.topAnchor.constraint(equalTo: currentWeatherContainerView.bottomAnchor, constant: padding),
@@ -119,7 +121,8 @@ extension CurrentTempratureVC {
     }
     
     private func configureCityLabel() {
-        let fontSize: CGFloat           = 20
+        let fontSize: CGFloat   = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 12 : 20
+
         cityNameLabel                   = WMSecondaryTitleLabel(textAlignment: .left, fontSize: fontSize)
         cityNameLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(cityNameLabel)
@@ -136,8 +139,9 @@ extension CurrentTempratureVC {
     }
     
     private func configureDateLabel() {
-        let fontSize: CGFloat           = 45
-        currentDateLabel                = WMTitleLabel(textAlignment: .left, fontSize: 45)
+        let fontSize: CGFloat   = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 30 : 45
+
+        currentDateLabel                = WMTitleLabel(textAlignment: .left, fontSize: fontSize)
         currentDateLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(currentDateLabel)
         

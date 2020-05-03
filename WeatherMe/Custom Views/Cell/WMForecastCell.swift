@@ -12,9 +12,9 @@ class WMForecastCell: UITableViewCell {
     
     static let reuseID          = "weatherForecastCell"
     var iconArtView             = WMIconImageView(frame: .zero)
-    var tempratureLabelView     = WMTitleLabel(textAlignment: .center, fontSize: 35)
-    var dateLabel               = WMSecondaryTitleLabel(textAlignment: .right, fontSize: 15)
-    var timeLabel               = WMSecondaryTitleLabel(textAlignment: .right, fontSize: 15)
+    var tempratureLabelView     = WMTitleLabel()
+    var dateLabel               = WMSecondaryTitleLabel()
+    var timeLabel               = WMSecondaryTitleLabel()
 
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -37,6 +37,14 @@ class WMForecastCell: UITableViewCell {
         let padding: CGFloat        = 8
         let imagePadding: CGFloat   = 20
         let imageSize: CGFloat      = 100
+        
+        let tempFontSize: CGFloat   = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 20 : 35
+        let dateAndTimeFontSize: CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 8 : 15
+        
+        iconArtView             = WMIconImageView(frame: .zero)
+        tempratureLabelView     = WMTitleLabel(textAlignment: .center, fontSize: tempFontSize)
+        dateLabel               = WMSecondaryTitleLabel(textAlignment: .right, fontSize: dateAndTimeFontSize)
+        timeLabel               = WMSecondaryTitleLabel(textAlignment: .right, fontSize: dateAndTimeFontSize)
         
         [iconArtView, tempratureLabelView, dateLabel, timeLabel].forEach { addSubview($0) }
         

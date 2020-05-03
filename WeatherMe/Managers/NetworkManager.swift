@@ -58,8 +58,8 @@ class NetworkManager {
     
     func getForecastWeatherForUsersLocation(coordinates location: CLLocationCoordinate2D, completion: @escaping (Result<ForecastWeather, WMNetworkError>) -> Void) {
         
-//        let endpoint = baseURL + "/forecast?lat=\(location.latitude)&lon=\(location.longitude)&appid=\(WMConstants.weatherMapAPIKey.rawValue)"
-        let endpoint = baseURL + "/forecast?lat=\(location.latitude)&lon=\(location.longitude)&dd=\(WMConstants.weatherMapAPIKey.rawValue)"
+        let endpoint = baseURL + "/forecast?lat=\(location.latitude)&lon=\(location.longitude)&appid=\(WMConstants.weatherMapAPIKey.rawValue)"
+        
 
         
         guard let url = URL(string: endpoint) else {
