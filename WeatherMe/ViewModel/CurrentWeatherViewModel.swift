@@ -18,6 +18,7 @@ struct CurrentWeatherViewModel {
     let temperature: String
     let weatherIconName: String
     let currentWeatherDiscription: String
+    let title           = "Current Weather"
     
     init(currentWeather: CurrentWeather) {
         // Time Zone
@@ -33,21 +34,39 @@ struct CurrentWeatherViewModel {
         
         let sunsetTimeInterval          = Double(currentWeather.current.sunset)
         let sunsetDate                  = sunsetTimeInterval.convertUnixToDate()
-        self.sunset                     = sunsetDate?.convertDateToTimeAMPM() ?? ""
+        let sunsetText                  = sunsetDate?.convertDateToTimeAMPM() ?? "--:--"
+        self.sunset                     = "Sunset    \(sunsetText)"
         
         let sunriseTimeInterval         = Double(currentWeather.current.sunrise)
         let sunriseDate                 = sunriseTimeInterval.convertUnixToDate()
-        self.sunrise                    = sunriseDate?.convertDateToTimeAMPM() ?? ""
+        let sunriseText                 = sunriseDate?.convertDateToTimeAMPM() ?? "--:--"
+        self.sunrise                    = "Sunrise   \(sunriseText)"
             
             
         // Temprature
         self.temperature                = currentWeather.current.temp.convertKelvinToFahrenheit()
-        self.feelsLike                  = currentWeather.current.feelsLike.convertKelvinToFahrenheit()
+        let feelsLikeText               = "Feels \(currentWeather.current.feelsLike.convertKelvinToFahrenheit())"
+        self.feelsLike                  = feelsLikeText
         self.humidity                   = "\(currentWeather.current.humidity) %"
         
         
         // Details
         self.weatherIconName            = currentWeather.current.weather.first?.icon ?? "01d"
         self.currentWeatherDiscription  = currentWeather.current.weather.first?.description.rawValue.uppercased() ?? ""
+    }
+    
+    init() {
+        self.timeZone                   = "Cupertino"
+        
+        self.sunset                     = "Sunset    --:--"
+        self.sunrise                    = "Sunrise   --:--"
+        self.date                       = "Fri May 02"
+        
+        self.temperature                = "58F"
+        self.feelsLike                  = "Feels 59F"
+        self.humidity                   = "25%"
+        
+        self.weatherIconName            = "02d"
+        self.currentWeatherDiscription  = "Scattered Clouds"
     }
 }

@@ -13,6 +13,6 @@ enum WMNetworkError: String, Error {
     case badURL         = "Please make sure Location information is correct"
     case badData        = "We got the data for you but it was unreliable."
     case urlError       = "There was a network related error."
-    case badResponse    = "The network response  code was invalid."
+    case badResponse    = "Looks Like Your API Key has Expired"
     case decodeError    = "We tried to get the data you needed, but failed."
 }

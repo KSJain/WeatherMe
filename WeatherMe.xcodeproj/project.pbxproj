@@ -15,6 +15,16 @@
 		F655A10C245E081D00D7230F /* ForecastWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F64A67245DDC6000B954C0 /* ForecastWeatherViewModel.swift */; };
 		F655A10D245E091800D7230F /* Double + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F64A63245DC5A000B954C0 /* Double + Extension.swift */; };
 		F655A10E245E092500D7230F /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F64A61245DC30900B954C0 /* Date + Extension.swift */; };
+		F655A111245E29E300D7230F /* WMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655A110245E29E300D7230F /* WMButton.swift */; };
+		F655A114245E2E1800D7230F /* WMAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655A113245E2E1800D7230F /* WMAlertVC.swift */; };
+		F655A117245E2E8800D7230F /* WMAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655A116245E2E8800D7230F /* WMAlertContainerView.swift */; };
+		F655A11A245E2F1400D7230F /* WMForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655A119245E2F1400D7230F /* WMForecastCell.swift */; };
+		F655A11D245E303D00D7230F /* WMTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655A11C245E303D00D7230F /* WMTitleLabel.swift */; };
+		F655A11F245E310C00D7230F /* WMBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655A11E245E310C00D7230F /* WMBodyLabel.swift */; };
+		F655A121245E319500D7230F /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655A120245E319500D7230F /* UIViewController + Extension.swift */; };
+		F655A123245E440500D7230F /* WMWeatherContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655A122245E440500D7230F /* WMWeatherContainerView.swift */; };
+		F655A125245E466500D7230F /* UIIMageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655A124245E466500D7230F /* UIIMageView + Extension.swift */; };
+		F655A128245E680800D7230F /* WMIconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655A127245E680800D7230F /* WMIconImageView.swift */; };
 		F6F64A22245B632D00B954C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F64A21245B632D00B954C0 /* AppDelegate.swift */; };
 		F6F64A24245B632D00B954C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F64A23245B632D00B954C0 /* SceneDelegate.swift */; };
 		F6F64A2B245B633100B954C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6F64A2A245B633100B954C0 /* Assets.xcassets */; };
@@ -49,6 +59,16 @@
 		F655A0FF245E05CE00D7230F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F655A105245E062F00D7230F /* ForecastTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTest.swift; sourceTree = "<group>"; };
 		F655A107245E06A900D7230F /* CurrentWeatherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherTest.swift; sourceTree = "<group>"; };
+		F655A110245E29E300D7230F /* WMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMButton.swift; sourceTree = "<group>"; };
+		F655A113245E2E1800D7230F /* WMAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMAlertVC.swift; sourceTree = "<group>"; };
+		F655A116245E2E8800D7230F /* WMAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMAlertContainerView.swift; sourceTree = "<group>"; };
+		F655A119245E2F1400D7230F /* WMForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMForecastCell.swift; sourceTree = "<group>"; };
+		F655A11C245E303D00D7230F /* WMTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMTitleLabel.swift; sourceTree = "<group>"; };
+		F655A11E245E310C00D7230F /* WMBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMBodyLabel.swift; sourceTree = "<group>"; };
+		F655A120245E319500D7230F /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		F655A122245E440500D7230F /* WMWeatherContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMWeatherContainerView.swift; sourceTree = "<group>"; };
+		F655A124245E466500D7230F /* UIIMageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIIMageView + Extension.swift"; sourceTree = "<group>"; };
+		F655A127245E680800D7230F /* WMIconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMIconImageView.swift; sourceTree = "<group>"; };
 		F6F64A1E245B632D00B954C0 /* WeatherMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F64A21245B632D00B954C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6F64A23245B632D00B954C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +116,56 @@
 				F655A0FF245E05CE00D7230F /* Info.plist */,
 			);
 			path = WeatherMeTests;
+			sourceTree = "<group>";
+		};
+		F655A10F245E29C000D7230F /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				F655A110245E29E300D7230F /* WMButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		F655A112245E2BBB00D7230F /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F655A113245E2E1800D7230F /* WMAlertVC.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		F655A115245E2E7800D7230F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F655A116245E2E8800D7230F /* WMAlertContainerView.swift */,
+				F655A122245E440500D7230F /* WMWeatherContainerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F655A118245E2EF500D7230F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F655A119245E2F1400D7230F /* WMForecastCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F655A11B245E302A00D7230F /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				F655A11C245E303D00D7230F /* WMTitleLabel.swift */,
+				F655A11E245E310C00D7230F /* WMBodyLabel.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
+		F655A126245E67F400D7230F /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				F655A127245E680800D7230F /* WMIconImageView.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		F6F64A15245B632C00B954C0 = {
@@ -182,6 +252,12 @@
 		F6F64A57245DB68000B954C0 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				F655A126245E67F400D7230F /* Image */,
+				F655A11B245E302A00D7230F /* Label */,
+				F655A118245E2EF500D7230F /* Cell */,
+				F655A115245E2E7800D7230F /* View */,
+				F655A112245E2BBB00D7230F /* View Controller */,
+				F655A10F245E29C000D7230F /* Button */,
 				F6F64A58245DB69600B954C0 /* Tab Bar */,
 			);
 			path = "Custom Views";
@@ -209,6 +285,8 @@
 			children = (
 				F6F64A63245DC5A000B954C0 /* Double + Extension.swift */,
 				F6F64A61245DC30900B954C0 /* Date + Extension.swift */,
+				F655A120245E319500D7230F /* UIViewController + Extension.swift */,
+				F655A124245E466500D7230F /* UIIMageView + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -328,18 +406,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F655A121245E319500D7230F /* UIViewController + Extension.swift in Sources */,
 				F6F64A54245CDA4100B954C0 /* ForecastWeather.swift in Sources */,
 				F6F64A4A245CD08900B954C0 /* Constants.swift in Sources */,
 				F6F64A3B245B6A3200B954C0 /* LocationManager.swift in Sources */,
 				F6F64A62245DC30900B954C0 /* Date + Extension.swift in Sources */,
 				F6F64A68245DDC6000B954C0 /* ForecastWeatherViewModel.swift in Sources */,
 				F6F64A38245B645D00B954C0 /* CurrentTempratureVC.swift in Sources */,
+				F655A123245E440500D7230F /* WMWeatherContainerView.swift in Sources */,
+				F655A117245E2E8800D7230F /* WMAlertContainerView.swift in Sources */,
 				F6F64A4F245CD14700B954C0 /* CurrentWeather.swift in Sources */,
+				F655A11A245E2F1400D7230F /* WMForecastCell.swift in Sources */,
 				F6F64A52245CD22700B954C0 /* NetworkManager.swift in Sources */,
 				F6F64A5A245DB6AD00B954C0 /* WMTabBarController.swift in Sources */,
+				F655A11F245E310C00D7230F /* WMBodyLabel.swift in Sources */,
+				F655A111245E29E300D7230F /* WMButton.swift in Sources */,
 				F6F64A22245B632D00B954C0 /* AppDelegate.swift in Sources */,
+				F655A128245E680800D7230F /* WMIconImageView.swift in Sources */,
 				F6F64A64245DC5A000B954C0 /* Double + Extension.swift in Sources */,
+				F655A114245E2E1800D7230F /* WMAlertVC.swift in Sources */,
+				F655A11D245E303D00D7230F /* WMTitleLabel.swift in Sources */,
 				F6F64A4C245CD0BE00B954C0 /* Errors.swift in Sources */,
+				F655A125245E466500D7230F /* UIIMageView + Extension.swift in Sources */,
 				F6F64A56245DB5D500B954C0 /* ForecastWeatherVC.swift in Sources */,
 				F6F64A24245B632D00B954C0 /* SceneDelegate.swift in Sources */,
 				F6F64A5D245DBA8B00B954C0 /* CurrentWeatherViewModel.swift in Sources */,

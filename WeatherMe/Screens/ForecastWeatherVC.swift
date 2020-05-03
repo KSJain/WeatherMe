@@ -33,7 +33,6 @@ class ForecastWeatherVC: UIViewController  {
     }
     
     private func updateUI(with viewModel: ForecastWeatherViewModel)  {
-        print(viewModel)
         DispatchQueue.main.async {
             self.title = "5 Days in \(viewModel.city)"
         }

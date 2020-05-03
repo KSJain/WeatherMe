@@ -12,7 +12,7 @@ class WMTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        UITabBar.appearance().tintColor = .systemGreen
+        UITabBar.appearance().tintColor = .systemTeal
         viewControllers                 = [createCurrentWeatherNC(), createForecastWeatherNC()]
     }
     
