@@ -9,7 +9,7 @@
 import UIKit
 
 fileprivate var emptyView: WMEmptyStateView?
-fileprivate var containerView: UIView!
+fileprivate var containerView: UIView?
 
 // MARK:- Custom Alert
 extension UIViewController {
@@ -29,8 +29,10 @@ extension UIViewController {
 extension UIViewController {
     func showEmptyStateView(with message: String) {
         emptyView                       = WMEmptyStateView(message: message)
-        emptyView?.frame                = view.bounds
-        view.addSubview(emptyView!)
+        
+        guard let emptyView = emptyView else { return }
+        emptyView.frame                = view.bounds
+        view.addSubview(emptyView)
     }
     
     func hideEmptyStateView(){
@@ -44,6 +46,7 @@ extension UIViewController {
     func showLoadingView() {
         containerView                   = UIView(frame: view.bounds)
         
+        guard let containerView = containerView else { return }
         view.addSubview(containerView)
         
         containerView.backgroundColor   = .systemBackground
