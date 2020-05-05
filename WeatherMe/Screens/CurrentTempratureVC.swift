@@ -11,17 +11,17 @@ import CoreLocation
 
 class CurrentTempratureVC: UIViewController {
     
-    private var locationManager: LocationManager!
+    private var locationManager: LocationManager?
     private var currentLocation: CLLocationCoordinate2D?
-    private var viewModel: CurrentWeatherViewModel!
+    private var viewModel: CurrentWeatherViewModel?
     
-    private var currentDateLabel: WMTitleLabel!
-    private var cityNameLabel: WMSecondaryTitleLabel!
-    private var currentWeatherContainerView: WMWeatherContainerView!
-    private var weatherDetailsLabel: WMTitleLabel!
-    private var sunriseLabelView: WMSecondaryTitleLabel!
-    private var sunsetLabelView: WMSecondaryTitleLabel!
-    private var forecastButton: WMButton!
+    private var currentDateLabel = WMTitleLabel()
+    private var cityNameLabel = WMSecondaryTitleLabel()
+    private var currentWeatherContainerView = WMWeatherContainerView()
+    private var weatherDetailsLabel = WMTitleLabel()
+    private var sunriseLabelView = WMSecondaryTitleLabel()
+    private var sunsetLabelView = WMSecondaryTitleLabel()
+    private var forecastButton = WMButton()
 
         
     override func viewDidLoad() {
@@ -193,10 +193,7 @@ extension CurrentTempratureVC {
 extension CurrentTempratureVC: UserLocationDelegate {
     
     func locationManagerDoesNotHavePermissions() {
-        if currentWeatherContainerView != nil {
-            currentWeatherContainerView.removeFromSuperview()
-        }
-        
+        currentWeatherContainerView.removeFromSuperview()
         self.showEmptyStateView(with: WMConstants.forecastScreenNoLocationPermission.rawValue)
     }
     
@@ -205,6 +202,7 @@ extension CurrentTempratureVC: UserLocationDelegate {
     }
     
     private func getCurrentUserLocation() {
+        guard let locationManager = locationManager else { return }
         locationManager.determineMyCurrentLocation()
     }
     
@@ -234,7 +232,8 @@ extension CurrentTempratureVC {
                 self.viewModel          = CurrentWeatherViewModel(currentWeather: data)
             }
             
-            self.updateUI(with: self.viewModel)
+            guard let viewModel = self.viewModel else { return }
+            self.updateUI(with: viewModel)
         }
     }
 }

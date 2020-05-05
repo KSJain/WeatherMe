@@ -18,11 +18,11 @@ fileprivate enum Section {
 
 class ForecastWeatherVC: UIViewController  {
     
-    private var locationManager: LocationManager!
+    private var locationManager: LocationManager?
     private var currentLocation: CLLocationCoordinate2D?
-    private var viewModel: ForecastWeatherViewModel!
+    private var viewModel: ForecastWeatherViewModel?
     
-    private var diffableDataSource: ForecastDataSource!
+    private var diffableDataSource: ForecastDataSource?
     private var tableView               = UITableView()
     
     
@@ -35,13 +35,16 @@ class ForecastWeatherVC: UIViewController  {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+
+
         configureLocationManager()
         getCurrentUserLocation()
     }
     
     private func configureViewController() {
         view.backgroundColor            = .systemBackground
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 
@@ -64,7 +67,7 @@ extension ForecastWeatherVC {
         view.addSubview(tableView)
         
         tableView.frame                 = view.bounds
-        tableView.rowHeight             = 120
+        tableView.rowHeight             = view.bounds.height / 6.8
         
         tableView.register(WMForecastCell.self, forCellReuseIdentifier: WMForecastCell.reuseID)
     }
@@ -76,14 +79,15 @@ extension ForecastWeatherVC {
         diffableDataSource = ForecastDataSource(tableView: tableView,
                                                 cellProvider: { (tableView, indexPath, forecastData) -> UITableViewCell? in
                                                     let cell = tableView.dequeueReusableCell(withIdentifier: WMForecastCell.reuseID,
-                                                                                             for: indexPath) as! WMForecastCell
+                                                                                             for: indexPath) as? WMForecastCell
                                                     
-                                                    cell.setCell(with: forecastData)
+                                                    cell?.setCell(with: forecastData)
                                                     return cell
         })
     }
     
     private func createSnapshot(for forecasts: [Forecast] ) {
+        guard let diffableDataSource = diffableDataSource else { return }
         var snapshot                    = ForecastSnapshot()
         snapshot.appendSections([.main])
         snapshot.appendItems(forecasts)
@@ -98,6 +102,7 @@ extension ForecastWeatherVC: UserLocationDelegate {
     }
     
     private func getCurrentUserLocation() {
+        guard let locationManager = locationManager else { return }
         locationManager.determineMyCurrentLocation()
     }
     
@@ -121,7 +126,6 @@ extension ForecastWeatherVC {
         NetworkManager.shared.getForecastWeatherForUsersLocation(coordinates: location) { [weak self] result in
             guard let self = self else { return }
             
-            self.dismissLoadingView()
             
             switch result {
             case.failure(let error):
@@ -138,8 +142,25 @@ extension ForecastWeatherVC {
                     self.hideEmptyStateView()
                 }
                 self.viewModel = ForecastWeatherViewModel(with: data)
-                self.updateUI(with: self.viewModel)
+                if self.viewModel != nil {
+                    self.updateUI(with: self.viewModel!)
+                }
             }
+            self.dismissLoadingView()
         }
     }
+}
+
+
+
+extension ForecastWeatherVC: UIScrollViewDelegate {
+
+func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+    if #available(iOS 11.0, *) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.navigationController?.navigationBar.prefersLargeTitles = (velocity.y < 0)
+        })
+    }
+}
+
 }
