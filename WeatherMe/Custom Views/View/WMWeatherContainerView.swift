@@ -71,10 +71,6 @@ class WMWeatherContainerView: UIView {
             tempLabel.widthAnchor.constraint(equalToConstant: tempFontSize * 2.5),
             tempLabel.heightAnchor.constraint(equalToConstant: tempFontSize * 1.5),
             
-            
-//            tempLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-//            tempLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -radious * 0.08),
-            
             feelsLikeLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             feelsLikeLabel.topAnchor.constraint(equalTo: tempLabel.bottomAnchor),
             feelsLikeLabel.widthAnchor.constraint(equalToConstant: radious * 1.4),

@@ -36,8 +36,6 @@ class ForecastWeatherVC: UIViewController  {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = true
-
 
         configureLocationManager()
         getCurrentUserLocation()
@@ -149,18 +147,4 @@ extension ForecastWeatherVC {
             self.dismissLoadingView()
         }
     }
-}
-
-
-
-extension ForecastWeatherVC: UIScrollViewDelegate {
-
-func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-    if #available(iOS 11.0, *) {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.navigationController?.navigationBar.prefersLargeTitles = (velocity.y < 0)
-        })
-    }
-}
-
 }
